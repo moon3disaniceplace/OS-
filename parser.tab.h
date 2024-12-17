@@ -89,7 +89,8 @@ extern int yydebug;
     LEQ = 290,                     /* LEQ  */
     GEQ = 291,                     /* GEQ  */
     EQUAL = 292,                   /* EQUAL  */
-    NEQUAL = 293                   /* NEQUAL  */
+    NEQUAL = 293,                  /* NEQUAL  */
+    IFX = 294                      /* IFX  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif

@@ -153,24 +153,21 @@ enum yysymbol_kind_t
   YYSYMBOL_GEQ = 36,                       /* GEQ  */
   YYSYMBOL_EQUAL = 37,                     /* EQUAL  */
   YYSYMBOL_NEQUAL = 38,                    /* NEQUAL  */
-  YYSYMBOL_39_ = 39,                       /* '+'  */
-  YYSYMBOL_40_ = 40,                       /* '-'  */
-  YYSYMBOL_41_ = 41,                       /* '*'  */
-  YYSYMBOL_42_ = 42,                       /* '/'  */
-  YYSYMBOL_YYACCEPT = 43,                  /* $accept  */
-  YYSYMBOL_Program = 44,                   /* Program  */
-  YYSYMBOL_Funcs = 45,                     /* Funcs  */
-  YYSYMBOL_FuncDecl = 46,                  /* FuncDecl  */
-  YYSYMBOL_RetType = 47,                   /* RetType  */
-  YYSYMBOL_Formals = 48,                   /* Formals  */
-  YYSYMBOL_FormalsList = 49,               /* FormalsList  */
-  YYSYMBOL_FormalDecl = 50,                /* FormalDecl  */
-  YYSYMBOL_Statements = 51,                /* Statements  */
-  YYSYMBOL_Statement = 52,                 /* Statement  */
-  YYSYMBOL_Call = 53,                      /* Call  */
-  YYSYMBOL_Explist = 54,                   /* Explist  */
-  YYSYMBOL_Type = 55,                      /* Type  */
-  YYSYMBOL_Exp = 56                        /* Exp  */
+  YYSYMBOL_IFX = 39,                       /* IFX  */
+  YYSYMBOL_YYACCEPT = 40,                  /* $accept  */
+  YYSYMBOL_Program = 41,                   /* Program  */
+  YYSYMBOL_Funcs = 42,                     /* Funcs  */
+  YYSYMBOL_FuncDecl = 43,                  /* FuncDecl  */
+  YYSYMBOL_RetType = 44,                   /* RetType  */
+  YYSYMBOL_Formals = 45,                   /* Formals  */
+  YYSYMBOL_FormalsList = 46,               /* FormalsList  */
+  YYSYMBOL_FormalDecl = 47,                /* FormalDecl  */
+  YYSYMBOL_Statements = 48,                /* Statements  */
+  YYSYMBOL_Statement = 49,                 /* Statement  */
+  YYSYMBOL_Call = 50,                      /* Call  */
+  YYSYMBOL_Explist = 51,                   /* Explist  */
+  YYSYMBOL_Type = 52,                      /* Type  */
+  YYSYMBOL_Exp = 53                        /* Exp  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -498,10 +495,10 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  10
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   372
+#define YYLAST   351
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  43
+#define YYNTOKENS  40
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  14
 /* YYNRULES -- Number of rules.  */
@@ -510,7 +507,7 @@ union yyalloc
 #define YYNSTATES  108
 
 /* YYMAXUTOK -- Last valid token kind.  */
-#define YYMAXUTOK   293
+#define YYMAXUTOK   294
 
 
 /* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
@@ -528,7 +525,7 @@ static const yytype_int8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,    41,    39,     2,    40,     2,    42,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -553,19 +550,19 @@ static const yytype_int8 yytranslate[] =
        5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
       15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
       25,    26,    27,    28,    29,    30,    31,    32,    33,    34,
-      35,    36,    37,    38
+      35,    36,    37,    38,    39
 };
 
 #if YYDEBUG
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
-static const yytype_uint8 yyrline[] =
+static const yytype_int16 yyrline[] =
 {
-       0,    38,    38,    42,    45,    52,    58,    61,    67,    70,
-      76,    80,    87,    93,    96,   103,   106,   109,   112,   115,
-     118,   121,   124,   127,   130,   133,   136,   142,   145,   151,
-     154,   161,   164,   167,   173,   176,   179,   182,   185,   188,
-     191,   194,   197,   200,   203,   206,   209,   212,   215,   218,
-     221,   224,   227,   230,   233,   236
+       0,    40,    40,    44,    45,    49,    60,    61,    65,    66,
+      70,    71,    75,    84,    85,    89,    90,    97,   104,   110,
+     111,   112,   113,   120,   127,   133,   134,   138,   144,   153,
+     154,   158,   159,   160,   164,   165,   172,   179,   186,   193,
+     196,   197,   200,   203,   206,   209,   212,   215,   218,   223,
+     229,   237,   244,   251,   258,   265
 };
 #endif
 
@@ -586,9 +583,9 @@ static const char *const yytname[] =
   "WHILE", "BREAK", "CONTINUE", "SC", "COMMA", "LPAREN", "RPAREN",
   "LBRACE", "RBRACE", "ASSIGN", "ID", "NUM", "NUM_B", "STRING", "PLUS",
   "MINUS", "MULT", "DIV", "LESS", "GREATER", "LEQ", "GEQ", "EQUAL",
-  "NEQUAL", "'+'", "'-'", "'*'", "'/'", "$accept", "Program", "Funcs",
-  "FuncDecl", "RetType", "Formals", "FormalsList", "FormalDecl",
-  "Statements", "Statement", "Call", "Explist", "Type", "Exp", YY_NULLPTR
+  "NEQUAL", "IFX", "$accept", "Program", "Funcs", "FuncDecl", "RetType",
+  "Formals", "FormalsList", "FormalDecl", "Statements", "Statement",
+  "Call", "Explist", "Type", "Exp", YY_NULLPTR
 };
 
 static const char *
@@ -606,23 +603,23 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 #define YYTABLE_NINF (-1)
 
 #define yytable_value_is_error(Yyn) \
-  0
+  ((Yyn) == YYTABLE_NINF)
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
 static const yytype_int16 yypact[] =
 {
-      52,   -35,   -35,   -35,   -35,     4,   -35,    52,   -10,   -35,
-     -35,   -35,   -15,     7,    -4,   -35,     0,    -3,    -1,     7,
-     -35,   290,   -35,   299,    10,    12,     6,     9,   290,   -14,
-     262,   -35,    15,    11,   324,   -35,   -35,   -35,   245,    14,
-     -35,   -35,   -35,   -35,    55,   324,   324,   -35,   -35,   276,
-     311,   324,   -35,   -35,   -35,   -16,    29,    17,    79,   324,
-     324,   -35,   324,   324,   324,   324,   324,   324,   324,   324,
-     324,   324,   101,   123,   -35,   -35,    20,   147,   160,   -35,
-     324,   324,   -35,   320,   206,    29,    29,    29,    29,   330,
-     330,   183,   183,   183,   183,   290,   290,   -35,   324,   -35,
-     196,    29,    23,   -35,   -35,   -35,   290,   -35
+      52,   -35,   -35,   -35,   -35,    15,   -35,    52,    -8,   -35,
+     -35,   -35,    -1,     7,     0,   -35,     3,     2,     8,     7,
+     -35,   289,   -35,   298,     4,    12,    18,    19,   289,   -14,
+     261,   -35,    20,     9,   323,   -35,   -35,   -35,   244,    13,
+     -35,   -35,   -35,   -35,    61,   323,   323,   -35,   -35,   275,
+     310,   323,   -35,   -35,   -35,   -16,   -35,    31,    79,   323,
+     323,   -35,   323,   323,   323,   323,   323,   323,   323,   323,
+     323,   323,    97,   115,   -35,   -35,    32,   135,   167,   -35,
+     323,   323,   -35,   157,   209,   -27,   -27,   -35,   -35,   126,
+     126,   126,   126,   189,   189,   289,   289,   -35,   323,   -35,
+     199,   -35,    27,   -35,   -35,   -35,   289,   -35
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -638,15 +635,15 @@ static const yytype_int8 yydefact[] =
        0,     0,     5,    14,    19,     0,    46,     0,     0,     0,
        0,    21,     0,     0,     0,     0,     0,     0,     0,     0,
        0,     0,     0,     0,    15,    28,     0,    29,     0,    16,
-       0,     0,    34,    47,    48,    52,    51,    53,    54,    49,
-      50,    35,    36,    37,    38,     0,     0,    27,     0,    18,
+       0,     0,    34,    47,    48,    35,    36,    37,    38,    51,
+      52,    53,    54,    49,    50,     0,     0,    27,     0,    18,
        0,    55,    22,    24,    30,    17,     0,    23
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -35,   -35,    45,   -35,   -35,   -35,    34,   -35,    31,   -29,
+     -35,   -35,    55,   -35,   -35,   -35,    40,   -35,    35,   -29,
      -21,   -34,    16,   -20
 };
 
@@ -662,114 +659,110 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-      32,    53,    79,    44,    10,    13,    50,    32,    80,    32,
-      51,     2,     3,     4,    56,    12,     9,    18,    58,    19,
-      53,    21,    20,     9,    47,    72,    73,    48,    32,    17,
-      45,    78,    46,    54,    50,    17,    55,   106,    81,    83,
-      84,    97,    85,    86,    87,    88,    89,    90,    91,    92,
-      93,    94,    11,    22,    57,     1,     2,     3,     4,    49,
-     100,   101,    59,    60,   104,     0,   102,   103,    68,    69,
-      70,    71,     0,    61,    32,    32,     0,   107,     0,     0,
-       0,     0,     0,     0,     0,    32,    59,    60,    62,    63,
-      64,    65,    66,    67,    68,    69,    70,    71,     0,     0,
-      82,     0,     0,     0,     0,     0,     0,     0,    59,    60,
-       0,     0,    62,    63,    64,    65,    66,    67,    68,    69,
-      70,    71,    95,     0,     0,     0,     0,     0,     0,     0,
-      59,    60,     0,     0,    62,    63,    64,    65,    66,    67,
-      68,    69,    70,    71,    96,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,    59,    60,    62,    63,    64,    65,
-      66,    67,    68,    69,    70,    71,    98,    59,    60,     0,
-       0,     0,     0,     0,     0,     0,     0,     0,    99,     0,
+      32,    53,    79,    44,    64,    65,    50,    32,    80,    32,
+      51,     2,     3,     4,    56,    10,     9,    12,    58,    13,
+      53,    18,    19,     9,    45,    72,    73,    20,    32,    17,
+      21,    78,    46,    50,    55,    17,    47,    48,    54,    83,
+      84,   106,    85,    86,    87,    88,    89,    90,    91,    92,
+      93,    94,    81,    97,    57,     1,     2,     3,     4,    22,
+     100,   101,    11,    49,   104,     0,   102,   103,    59,    60,
+       0,     0,     0,     0,    32,    32,     0,   107,     0,    61,
+       0,     0,     0,     0,     0,    32,    59,    60,     0,     0,
       62,    63,    64,    65,    66,    67,    68,    69,    70,    71,
-      59,    60,     0,    62,    63,    64,    65,    66,    67,    68,
-      69,    70,    71,    59,    60,     0,     0,     0,     0,     0,
-       0,     0,     0,    59,   105,     0,    62,    63,    64,    65,
-      66,    67,    68,    69,    70,    71,     0,     0,     0,    62,
-      63,    64,    65,    66,    67,    68,    69,    70,    71,    62,
-      63,    64,    65,    66,    67,    68,    69,    70,    71,     2,
-       3,     4,     0,     0,    34,    35,    36,     0,     0,     0,
-       0,     0,     0,     0,     0,    38,     2,     3,     4,     0,
-      39,    40,    41,    42,    23,    24,     0,    25,    26,    27,
-       2,     3,     4,     0,    28,    52,     0,    29,    23,    24,
-       0,    25,    26,    27,     2,     3,     4,     0,    28,    74,
-       0,    29,    23,    24,     0,    25,    26,    27,    34,    35,
-      36,     0,    28,     0,     0,    29,     0,    37,     0,    38,
-      34,    35,    36,     0,    39,    40,    41,    42,     0,     0,
-       0,    38,    75,    34,    35,    36,    39,    40,    41,    42,
-       0,     0,     0,     0,    38,     0,     0,     0,     0,    39,
-      40,    41,    42,    62,    63,    64,    65,    66,    67,    68,
-      69,    70,    71,    62,    63,    64,    65,     0,     0,    68,
-      69,    70,    71
+      82,     0,     0,     0,    59,    60,     0,     0,    62,    63,
+      64,    65,    66,    67,    68,    69,    70,    71,    95,     0,
+       0,     0,    59,    60,     0,     0,    62,    63,    64,    65,
+      66,    67,    68,    69,    70,    71,    96,     0,     0,     0,
+       0,     0,    59,    60,    62,    63,    64,    65,    66,    67,
+      68,    69,    70,    71,    98,    62,    63,    64,    65,    -1,
+      -1,    -1,    -1,     0,    62,    63,    64,    65,    66,    67,
+      68,    69,    70,    71,    59,    60,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,    99,    62,    63,    64,    65,
+      66,    67,    68,    69,    70,    71,    62,    63,    64,    65,
+      66,    67,    68,    69,    70,    71,    59,    60,     0,     0,
+       0,     0,     0,     0,     0,     0,    59,   105,    62,    63,
+      64,    65,    66,    67,    68,    69,    -1,    -1,    62,    63,
+      64,    65,    66,    67,    68,    69,    70,    71,    62,    63,
+      64,    65,    66,    67,    68,    69,    70,    71,     2,     3,
+       4,     0,     0,    34,    35,    36,     0,     0,     0,     0,
+       0,     0,     0,     0,    38,     2,     3,     4,     0,    39,
+      40,    41,    42,    23,    24,     0,    25,    26,    27,     2,
+       3,     4,     0,    28,    52,     0,    29,    23,    24,     0,
+      25,    26,    27,     2,     3,     4,     0,    28,    74,     0,
+      29,    23,    24,     0,    25,    26,    27,    34,    35,    36,
+       0,    28,     0,     0,    29,     0,    37,     0,    38,    34,
+      35,    36,     0,    39,    40,    41,    42,     0,     0,     0,
+      38,    75,    34,    35,    36,    39,    40,    41,    42,     0,
+       0,     0,     0,    38,     0,     0,     0,     0,    39,    40,
+      41,    42
 };
 
 static const yytype_int8 yycheck[] =
 {
-      21,    30,    18,    23,     0,    20,    20,    28,    24,    30,
-      24,     4,     5,     6,    34,    25,     0,    21,    38,    19,
-      49,    22,    25,     7,    18,    45,    46,    18,    49,    13,
-      20,    51,    20,    18,    20,    19,    25,    14,    21,    59,
-      60,    21,    62,    63,    64,    65,    66,    67,    68,    69,
-      70,    71,     7,    19,    38,     3,     4,     5,     6,    28,
-      80,    81,     7,     8,    98,    -1,    95,    96,    39,    40,
-      41,    42,    -1,    18,    95,    96,    -1,   106,    -1,    -1,
-      -1,    -1,    -1,    -1,    -1,   106,     7,     8,    33,    34,
-      35,    36,    37,    38,    39,    40,    41,    42,    -1,    -1,
-      21,    -1,    -1,    -1,    -1,    -1,    -1,    -1,     7,     8,
-      -1,    -1,    33,    34,    35,    36,    37,    38,    39,    40,
-      41,    42,    21,    -1,    -1,    -1,    -1,    -1,    -1,    -1,
-       7,     8,    -1,    -1,    33,    34,    35,    36,    37,    38,
-      39,    40,    41,    42,    21,    -1,    -1,    -1,    -1,    -1,
-      -1,    -1,    -1,    -1,     7,     8,    33,    34,    35,    36,
-      37,    38,    39,    40,    41,    42,    19,     7,     8,    -1,
-      -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    18,    -1,
-      33,    34,    35,    36,    37,    38,    39,    40,    41,    42,
-       7,     8,    -1,    33,    34,    35,    36,    37,    38,    39,
-      40,    41,    42,     7,     8,    -1,    -1,    -1,    -1,    -1,
-      -1,    -1,    -1,     7,    18,    -1,    33,    34,    35,    36,
-      37,    38,    39,    40,    41,    42,    -1,    -1,    -1,    33,
-      34,    35,    36,    37,    38,    39,    40,    41,    42,    33,
-      34,    35,    36,    37,    38,    39,    40,    41,    42,     4,
-       5,     6,    -1,    -1,     9,    10,    11,    -1,    -1,    -1,
-      -1,    -1,    -1,    -1,    -1,    20,     4,     5,     6,    -1,
-      25,    26,    27,    28,    12,    13,    -1,    15,    16,    17,
-       4,     5,     6,    -1,    22,    23,    -1,    25,    12,    13,
-      -1,    15,    16,    17,     4,     5,     6,    -1,    22,    23,
-      -1,    25,    12,    13,    -1,    15,    16,    17,     9,    10,
-      11,    -1,    22,    -1,    -1,    25,    -1,    18,    -1,    20,
-       9,    10,    11,    -1,    25,    26,    27,    28,    -1,    -1,
-      -1,    20,    21,     9,    10,    11,    25,    26,    27,    28,
-      -1,    -1,    -1,    -1,    20,    -1,    -1,    -1,    -1,    25,
-      26,    27,    28,    33,    34,    35,    36,    37,    38,    39,
-      40,    41,    42,    33,    34,    35,    36,    -1,    -1,    39,
-      40,    41,    42
+      21,    30,    18,    23,    31,    32,    20,    28,    24,    30,
+      24,     4,     5,     6,    34,     0,     0,    25,    38,    20,
+      49,    21,    19,     7,    20,    45,    46,    25,    49,    13,
+      22,    51,    20,    20,    25,    19,    18,    18,    18,    59,
+      60,    14,    62,    63,    64,    65,    66,    67,    68,    69,
+      70,    71,    21,    21,    38,     3,     4,     5,     6,    19,
+      80,    81,     7,    28,    98,    -1,    95,    96,     7,     8,
+      -1,    -1,    -1,    -1,    95,    96,    -1,   106,    -1,    18,
+      -1,    -1,    -1,    -1,    -1,   106,     7,     8,    -1,    -1,
+      29,    30,    31,    32,    33,    34,    35,    36,    37,    38,
+      21,    -1,    -1,    -1,     7,     8,    -1,    -1,    29,    30,
+      31,    32,    33,    34,    35,    36,    37,    38,    21,    -1,
+      -1,    -1,     7,     8,    -1,    -1,    29,    30,    31,    32,
+      33,    34,    35,    36,    37,    38,    21,    -1,    -1,    -1,
+      -1,    -1,     7,     8,    29,    30,    31,    32,    33,    34,
+      35,    36,    37,    38,    19,    29,    30,    31,    32,    33,
+      34,    35,    36,    -1,    29,    30,    31,    32,    33,    34,
+      35,    36,    37,    38,     7,     8,    -1,    -1,    -1,    -1,
+      -1,    -1,    -1,    -1,    -1,    18,    29,    30,    31,    32,
+      33,    34,    35,    36,    37,    38,    29,    30,    31,    32,
+      33,    34,    35,    36,    37,    38,     7,     8,    -1,    -1,
+      -1,    -1,    -1,    -1,    -1,    -1,     7,    18,    29,    30,
+      31,    32,    33,    34,    35,    36,    37,    38,    29,    30,
+      31,    32,    33,    34,    35,    36,    37,    38,    29,    30,
+      31,    32,    33,    34,    35,    36,    37,    38,     4,     5,
+       6,    -1,    -1,     9,    10,    11,    -1,    -1,    -1,    -1,
+      -1,    -1,    -1,    -1,    20,     4,     5,     6,    -1,    25,
+      26,    27,    28,    12,    13,    -1,    15,    16,    17,     4,
+       5,     6,    -1,    22,    23,    -1,    25,    12,    13,    -1,
+      15,    16,    17,     4,     5,     6,    -1,    22,    23,    -1,
+      25,    12,    13,    -1,    15,    16,    17,     9,    10,    11,
+      -1,    22,    -1,    -1,    25,    -1,    18,    -1,    20,     9,
+      10,    11,    -1,    25,    26,    27,    28,    -1,    -1,    -1,
+      20,    21,     9,    10,    11,    25,    26,    27,    28,    -1,
+      -1,    -1,    -1,    20,    -1,    -1,    -1,    -1,    25,    26,
+      27,    28
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
    state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     3,     4,     5,     6,    44,    45,    46,    47,    55,
-       0,    45,    25,    20,    48,    49,    50,    55,    21,    19,
-      25,    22,    49,    12,    13,    15,    16,    17,    22,    25,
-      51,    52,    53,    55,     9,    10,    11,    18,    20,    25,
-      26,    27,    28,    53,    56,    20,    20,    18,    18,    51,
-      20,    24,    23,    52,    18,    25,    56,    55,    56,     7,
-       8,    18,    33,    34,    35,    36,    37,    38,    39,    40,
-      41,    42,    56,    56,    23,    21,    54,    56,    56,    18,
-      24,    21,    21,    56,    56,    56,    56,    56,    56,    56,
-      56,    56,    56,    56,    56,    21,    21,    21,    19,    18,
-      56,    56,    52,    52,    54,    18,    14,    52
+       0,     3,     4,     5,     6,    41,    42,    43,    44,    52,
+       0,    42,    25,    20,    45,    46,    47,    52,    21,    19,
+      25,    22,    46,    12,    13,    15,    16,    17,    22,    25,
+      48,    49,    50,    52,     9,    10,    11,    18,    20,    25,
+      26,    27,    28,    50,    53,    20,    20,    18,    18,    48,
+      20,    24,    23,    49,    18,    25,    53,    52,    53,     7,
+       8,    18,    29,    30,    31,    32,    33,    34,    35,    36,
+      37,    38,    53,    53,    23,    21,    51,    53,    53,    18,
+      24,    21,    21,    53,    53,    53,    53,    53,    53,    53,
+      53,    53,    53,    53,    53,    21,    21,    21,    19,    18,
+      53,    53,    49,    49,    51,    18,    14,    49
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    43,    44,    45,    45,    46,    47,    47,    48,    48,
-      49,    49,    50,    51,    51,    52,    52,    52,    52,    52,
-      52,    52,    52,    52,    52,    52,    52,    53,    53,    54,
-      54,    55,    55,    55,    56,    56,    56,    56,    56,    56,
-      56,    56,    56,    56,    56,    56,    56,    56,    56,    56,
-      56,    56,    56,    56,    56,    56
+       0,    40,    41,    42,    42,    43,    44,    44,    45,    45,
+      46,    46,    47,    48,    48,    49,    49,    49,    49,    49,
+      49,    49,    49,    49,    49,    49,    49,    50,    50,    51,
+      51,    52,    52,    52,    53,    53,    53,    53,    53,    53,
+      53,    53,    53,    53,    53,    53,    53,    53,    53,    53,
+      53,    53,    53,    53,    53,    53
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
@@ -1244,442 +1237,464 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* Program: Funcs  */
-#line 38 "parser.y"
+#line 40 "parser.y"
                {program = yyvsp[0]; }
-#line 1250 "parser.tab.c"
+#line 1243 "parser.tab.c"
     break;
 
   case 3: /* Funcs: %empty  */
-#line 42 "parser.y"
-     {
-        yyval = std::make_shared<ast::FuncList>();
-    }
-#line 1258 "parser.tab.c"
+#line 44 "parser.y"
+                { yyval = std::make_shared<ast::Funcs>(); }
+#line 1249 "parser.tab.c"
     break;
 
   case 4: /* Funcs: FuncDecl Funcs  */
 #line 45 "parser.y"
-                     {
-        yyval = yyvsp[0];
-        yyval->addFunc(yyvsp[-1]);
-    }
-#line 1267 "parser.tab.c"
+                     { yyval = yyvsp[0]; std::dynamic_pointer_cast<ast::Funcs>(yyval)->push_front(std::dynamic_pointer_cast<ast::FuncDecl>(yyvsp[-1])); }
+#line 1255 "parser.tab.c"
     break;
 
   case 5: /* FuncDecl: RetType ID LPAREN Formals RPAREN LBRACE Statements RBRACE  */
-#line 52 "parser.y"
+#line 49 "parser.y"
                                                               {
-        yyval = std::make_shared<ast::FuncDecl>(yyvsp[-7], yyvsp[-6], yyvsp[-4], yyvsp[-1]);
+        yyval = std::make_shared<ast::FuncDecl>(
+            std::dynamic_pointer_cast<ast::ID>(yyvsp[-6]),
+            std::dynamic_pointer_cast<ast::Type>(yyvsp[-7]),
+            std::dynamic_pointer_cast<ast::Formals>(yyvsp[-4]),
+            std::dynamic_pointer_cast<ast::Statements>(yyvsp[-1])
+        );
     }
-#line 1275 "parser.tab.c"
+#line 1268 "parser.tab.c"
     break;
 
   case 6: /* RetType: Type  */
-#line 58 "parser.y"
-         {
-        yyval = yyvsp[0];
-    }
-#line 1283 "parser.tab.c"
+#line 60 "parser.y"
+         { yyval = yyvsp[0]; }
+#line 1274 "parser.tab.c"
     break;
 
   case 7: /* RetType: VOID  */
 #line 61 "parser.y"
-           {
-        yyval = std::make_shared<ast::VoidType>();
-    }
-#line 1291 "parser.tab.c"
+           { yyval = std::make_shared<ast::Type>(ast::BuiltInType::VOID); }
+#line 1280 "parser.tab.c"
     break;
 
   case 8: /* Formals: %empty  */
-#line 67 "parser.y"
-                {
-        yyval = std::make_shared<ast::FormalList>();
-    }
-#line 1299 "parser.tab.c"
+#line 65 "parser.y"
+                { yyval = std::make_shared<ast::Formals>(); }
+#line 1286 "parser.tab.c"
     break;
 
   case 9: /* Formals: FormalsList  */
-#line 70 "parser.y"
-                  {
-        yyval = yyvsp[0];
-    }
-#line 1307 "parser.tab.c"
+#line 66 "parser.y"
+                  { yyval = yyvsp[0]; }
+#line 1292 "parser.tab.c"
     break;
 
   case 10: /* FormalsList: FormalDecl  */
-#line 76 "parser.y"
-               {
-        yyval = std::make_shared<ast::FormalList>();
-        yyval->addFormal(yyvsp[0]);
-    }
-#line 1316 "parser.tab.c"
+#line 70 "parser.y"
+               { yyval = std::make_shared<ast::Formals>(); std::dynamic_pointer_cast<ast::Formals>(yyval)->push_front(std::dynamic_pointer_cast<ast::Formal>(yyvsp[0])); }
+#line 1298 "parser.tab.c"
     break;
 
   case 11: /* FormalsList: FormalDecl COMMA FormalsList  */
-#line 80 "parser.y"
-                                   {
-        yyval = yyvsp[0];
-        yyval->addFormal(yyvsp[-2]);
-    }
-#line 1325 "parser.tab.c"
+#line 71 "parser.y"
+                                   { yyval = yyvsp[0]; std::dynamic_pointer_cast<ast::Formals>(yyval)->push_front(std::dynamic_pointer_cast<ast::Formal>(yyvsp[-2])); }
+#line 1304 "parser.tab.c"
     break;
 
   case 12: /* FormalDecl: Type ID  */
-#line 87 "parser.y"
+#line 75 "parser.y"
             {
-        yyval = std::make_shared<ast::FormalDecl>(yyvsp[-1], yyvsp[0]);
+        yyval = std::make_shared<ast::Formal>(
+            std::dynamic_pointer_cast<ast::ID>(yyvsp[0]),
+            std::dynamic_pointer_cast<ast::Type>(yyvsp[-1])
+        );
     }
-#line 1333 "parser.tab.c"
+#line 1315 "parser.tab.c"
     break;
 
   case 13: /* Statements: Statement  */
-#line 93 "parser.y"
-              {
-        yyval = std::make_shared<ast::StatementList>(yyvsp[0]);
-    }
-#line 1341 "parser.tab.c"
+#line 84 "parser.y"
+              { yyval = std::make_shared<ast::Statements>(std::dynamic_pointer_cast<ast::Statement>(yyvsp[0])); }
+#line 1321 "parser.tab.c"
     break;
 
   case 14: /* Statements: Statements Statement  */
-#line 96 "parser.y"
-                           {
-        yyval = yyvsp[-1];
-        yyval->addStatement(yyvsp[0]);
-    }
-#line 1350 "parser.tab.c"
+#line 85 "parser.y"
+                           { yyval = yyvsp[-1]; std::dynamic_pointer_cast<ast::Statements>(yyval)->push_back(std::dynamic_pointer_cast<ast::Statement>(yyvsp[0])); }
+#line 1327 "parser.tab.c"
     break;
 
   case 15: /* Statement: LBRACE Statements RBRACE  */
-#line 103 "parser.y"
-                             {
-        yyval = yyvsp[-1];
-    }
-#line 1358 "parser.tab.c"
+#line 89 "parser.y"
+                             { yyval = yyvsp[-1]; }
+#line 1333 "parser.tab.c"
     break;
 
   case 16: /* Statement: Type ID SC  */
-#line 106 "parser.y"
+#line 90 "parser.y"
                  {
-        yyval = std::make_shared<ast::VarDecl>(yyvsp[-2], yyvsp[-1]);
+        yyval = std::make_shared<ast::VarDecl>(
+            std::dynamic_pointer_cast<ast::ID>(yyvsp[-1]),
+            std::dynamic_pointer_cast<ast::Type>(yyvsp[-2]),
+            nullptr
+        );
     }
-#line 1366 "parser.tab.c"
+#line 1345 "parser.tab.c"
     break;
 
   case 17: /* Statement: Type ID ASSIGN Exp SC  */
-#line 109 "parser.y"
+#line 97 "parser.y"
                             {
-        yyval = std::make_shared<ast::VarDecl>(yyvsp[-4], yyvsp[-3], yyvsp[-1]);
+        yyval = std::make_shared<ast::VarDecl>(
+            std::dynamic_pointer_cast<ast::ID>(yyvsp[-3]),
+            std::dynamic_pointer_cast<ast::Type>(yyvsp[-4]),
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-1])
+        );
     }
-#line 1374 "parser.tab.c"
+#line 1357 "parser.tab.c"
     break;
 
   case 18: /* Statement: ID ASSIGN Exp SC  */
-#line 112 "parser.y"
+#line 104 "parser.y"
                        {
-        yyval = std::make_shared<ast::Assign>(yyvsp[-3], yyvsp[-1]);
+        yyval = std::make_shared<ast::Assign>(
+            std::dynamic_pointer_cast<ast::ID>(yyvsp[-3]),
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-1])
+        );
     }
-#line 1382 "parser.tab.c"
+#line 1368 "parser.tab.c"
     break;
 
   case 19: /* Statement: Call SC  */
-#line 115 "parser.y"
-              {
-        yyval = yyvsp[-1];
-    }
-#line 1390 "parser.tab.c"
+#line 110 "parser.y"
+              { yyval = yyvsp[-1]; }
+#line 1374 "parser.tab.c"
     break;
 
   case 20: /* Statement: RETURN SC  */
-#line 118 "parser.y"
-                {
-        yyval = std::make_shared<ast::Return>();
+#line 111 "parser.y"
+                { yyval = std::make_shared<ast::Return>(nullptr); }
+#line 1380 "parser.tab.c"
+    break;
+
+  case 21: /* Statement: RETURN Exp SC  */
+#line 112 "parser.y"
+                    { yyval = std::make_shared<ast::Return>(std::dynamic_pointer_cast<ast::Exp>(yyvsp[-1])); }
+#line 1386 "parser.tab.c"
+    break;
+
+  case 22: /* Statement: IF LPAREN Exp RPAREN Statement  */
+#line 113 "parser.y"
+                                               {
+        yyval = std::make_shared<ast::If>(
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]),
+            std::dynamic_pointer_cast<ast::Statement>(yyvsp[0]),
+            nullptr
+        );
     }
 #line 1398 "parser.tab.c"
     break;
 
-  case 21: /* Statement: RETURN Exp SC  */
-#line 121 "parser.y"
-                    {
-        yyval = std::make_shared<ast::Return>(yyvsp[-1]);
-    }
-#line 1406 "parser.tab.c"
-    break;
-
-  case 22: /* Statement: IF LPAREN Exp RPAREN Statement  */
-#line 124 "parser.y"
-                                     {
-        yyval = std::make_shared<ast::If>(yyvsp[-2], yyvsp[0]);
-    }
-#line 1414 "parser.tab.c"
-    break;
-
   case 23: /* Statement: IF LPAREN Exp RPAREN Statement ELSE Statement  */
-#line 127 "parser.y"
+#line 120 "parser.y"
                                                     {
-        yyval = std::make_shared<ast::IfElse>(yyvsp[-4], yyvsp[-2], yyvsp[0]);
+        yyval = std::make_shared<ast::If>(
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-4]),
+            std::dynamic_pointer_cast<ast::Statement>(yyvsp[-2]),
+            std::dynamic_pointer_cast<ast::Statement>(yyvsp[0])
+        );
     }
-#line 1422 "parser.tab.c"
+#line 1410 "parser.tab.c"
     break;
 
   case 24: /* Statement: WHILE LPAREN Exp RPAREN Statement  */
-#line 130 "parser.y"
+#line 127 "parser.y"
                                         {
-        yyval = std::make_shared<ast::While>(yyvsp[-2], yyvsp[0]);
+        yyval = std::make_shared<ast::While>(
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]),
+            std::dynamic_pointer_cast<ast::Statement>(yyvsp[0])
+        );
     }
-#line 1430 "parser.tab.c"
+#line 1421 "parser.tab.c"
     break;
 
   case 25: /* Statement: BREAK SC  */
 #line 133 "parser.y"
-               {
-        yyval = std::make_shared<ast::Break>();
-    }
-#line 1438 "parser.tab.c"
+               { yyval = std::make_shared<ast::Break>(); }
+#line 1427 "parser.tab.c"
     break;
 
   case 26: /* Statement: CONTINUE SC  */
-#line 136 "parser.y"
-                  {
-        yyval = std::make_shared<ast::Continue>();
-    }
-#line 1446 "parser.tab.c"
+#line 134 "parser.y"
+                  { yyval = std::make_shared<ast::Continue>(); }
+#line 1433 "parser.tab.c"
     break;
 
   case 27: /* Call: ID LPAREN Explist RPAREN  */
-#line 142 "parser.y"
+#line 138 "parser.y"
                              {
-        yyval = std::make_shared<ast::Call>(yyvsp[-3], yyvsp[-1]);
+        yyval = std::make_shared<ast::Call>(
+            std::dynamic_pointer_cast<ast::ID>(yyvsp[-3]),
+            std::dynamic_pointer_cast<ast::ExpList>(yyvsp[-1])
+        );
     }
-#line 1454 "parser.tab.c"
+#line 1444 "parser.tab.c"
     break;
 
   case 28: /* Call: ID LPAREN RPAREN  */
-#line 145 "parser.y"
+#line 144 "parser.y"
                        {
-        yyval = std::make_shared<ast::Call>(yyvsp[-2]);
+        yyval = std::make_shared<ast::Call>(
+            std::dynamic_pointer_cast<ast::ID>(yyvsp[-2]),
+            std::make_shared<ast::ExpList>()
+        );
     }
-#line 1462 "parser.tab.c"
+#line 1455 "parser.tab.c"
     break;
 
   case 29: /* Explist: Exp  */
-#line 151 "parser.y"
-        {
-        yyval = std::make_shared<ast::ExpList>(yyvsp[0]);
-    }
-#line 1470 "parser.tab.c"
+#line 153 "parser.y"
+        { yyval = std::make_shared<ast::ExpList>(std::dynamic_pointer_cast<ast::Exp>(yyvsp[0])); }
+#line 1461 "parser.tab.c"
     break;
 
   case 30: /* Explist: Exp COMMA Explist  */
 #line 154 "parser.y"
-                        {
-        yyval = yyvsp[0];
-        yyval->addExp(yyvsp[-2]);
-    }
-#line 1479 "parser.tab.c"
+                        { yyval = std::dynamic_pointer_cast<ast::ExpList>(yyvsp[0]); std::dynamic_pointer_cast<ast::ExpList>(yyval)->push_front(std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2])); }
+#line 1467 "parser.tab.c"
     break;
 
   case 31: /* Type: INT  */
-#line 161 "parser.y"
-        {
-        yyval = std::make_shared<ast::IntType>();
-    }
-#line 1487 "parser.tab.c"
+#line 158 "parser.y"
+        { yyval = std::make_shared<ast::Type>(ast::BuiltInType::INT); }
+#line 1473 "parser.tab.c"
     break;
 
   case 32: /* Type: BYTE  */
-#line 164 "parser.y"
-           {
-        yyval = std::make_shared<ast::ByteType>();
-    }
-#line 1495 "parser.tab.c"
+#line 159 "parser.y"
+           { yyval = std::make_shared<ast::Type>(ast::BuiltInType::BYTE); }
+#line 1479 "parser.tab.c"
     break;
 
   case 33: /* Type: BOOL  */
-#line 167 "parser.y"
-           {
-        yyval = std::make_shared<ast::BoolType>();
+#line 160 "parser.y"
+           { yyval = std::make_shared<ast::Type>(ast::BuiltInType::BOOL); }
+#line 1485 "parser.tab.c"
+    break;
+
+  case 34: /* Exp: LPAREN Exp RPAREN  */
+#line 164 "parser.y"
+                      { yyval = yyvsp[-1]; }
+#line 1491 "parser.tab.c"
+    break;
+
+  case 35: /* Exp: Exp PLUS Exp  */
+#line 165 "parser.y"
+                   {
+        yyval = std::make_shared<ast::BinOp>(
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]),
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]),
+            ast::BinOpType::ADD
+        );
     }
 #line 1503 "parser.tab.c"
     break;
 
-  case 34: /* Exp: LPAREN Exp RPAREN  */
-#line 173 "parser.y"
-                      {
-        yyval = yyvsp[-1];
+  case 36: /* Exp: Exp MINUS Exp  */
+#line 172 "parser.y"
+                    {
+        yyval = std::make_shared<ast::BinOp>(
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]),
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]),
+            ast::BinOpType::SUB
+        );
     }
-#line 1511 "parser.tab.c"
+#line 1515 "parser.tab.c"
     break;
 
-  case 35: /* Exp: Exp '+' Exp  */
-#line 176 "parser.y"
-                  {
-        yyval = std::make_shared<ast::BinOp>(yyvsp[-2], "+", yyvsp[0]);
-    }
-#line 1519 "parser.tab.c"
-    break;
-
-  case 36: /* Exp: Exp '-' Exp  */
+  case 37: /* Exp: Exp MULT Exp  */
 #line 179 "parser.y"
-                  {
-        yyval = std::make_shared<ast::BinOp>(yyvsp[-2], "-", yyvsp[0]);
+                   {
+        yyval = std::make_shared<ast::BinOp>(
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]),
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]),
+            ast::BinOpType::MUL
+        );
     }
 #line 1527 "parser.tab.c"
     break;
 
-  case 37: /* Exp: Exp '*' Exp  */
-#line 182 "parser.y"
+  case 38: /* Exp: Exp DIV Exp  */
+#line 186 "parser.y"
                   {
-        yyval = std::make_shared<ast::BinOp>(yyvsp[-2], "*", yyvsp[0]);
+        yyval = std::make_shared<ast::BinOp>(
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]),
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]),
+            ast::BinOpType::DIV
+        );
     }
-#line 1535 "parser.tab.c"
-    break;
-
-  case 38: /* Exp: Exp '/' Exp  */
-#line 185 "parser.y"
-                  {
-        yyval = std::make_shared<ast::BinOp>(yyvsp[-2], "/", yyvsp[0]);
-    }
-#line 1543 "parser.tab.c"
+#line 1539 "parser.tab.c"
     break;
 
   case 39: /* Exp: ID  */
-#line 188 "parser.y"
+#line 193 "parser.y"
          {
-        yyval = std::make_shared<ast::Var>(yyvsp[0]);
+        yyval = yyvsp[0];
     }
-#line 1551 "parser.tab.c"
+#line 1547 "parser.tab.c"
     break;
 
   case 40: /* Exp: Call  */
-#line 191 "parser.y"
-           {
-        yyval = yyvsp[0];
-    }
-#line 1559 "parser.tab.c"
+#line 196 "parser.y"
+           { yyval = yyvsp[0]; }
+#line 1553 "parser.tab.c"
     break;
 
   case 41: /* Exp: NUM  */
-#line 194 "parser.y"
+#line 197 "parser.y"
           {
-        yyval = std::make_shared<ast::Num>(yyvsp[0]);
+        yyval = yyvsp[0];
     }
-#line 1567 "parser.tab.c"
+#line 1561 "parser.tab.c"
     break;
 
   case 42: /* Exp: NUM_B  */
-#line 197 "parser.y"
+#line 200 "parser.y"
             {
-        yyval = std::make_shared<ast::Num>(yyvsp[0], true);
+        yyval = yyvsp[0];
     }
-#line 1575 "parser.tab.c"
+#line 1569 "parser.tab.c"
     break;
 
   case 43: /* Exp: STRING  */
-#line 200 "parser.y"
+#line 203 "parser.y"
              {
-        yyval = std::make_shared<ast::String>(yyvsp[0]);
+        yyval = yyvsp[0];
     }
-#line 1583 "parser.tab.c"
+#line 1577 "parser.tab.c"
     break;
 
   case 44: /* Exp: TRUE  */
-#line 203 "parser.y"
+#line 206 "parser.y"
            {
         yyval = std::make_shared<ast::Bool>(true);
     }
-#line 1591 "parser.tab.c"
+#line 1585 "parser.tab.c"
     break;
 
   case 45: /* Exp: FALSE  */
-#line 206 "parser.y"
+#line 209 "parser.y"
             {
         yyval = std::make_shared<ast::Bool>(false);
     }
-#line 1599 "parser.tab.c"
+#line 1593 "parser.tab.c"
     break;
 
   case 46: /* Exp: NOT Exp  */
-#line 209 "parser.y"
+#line 212 "parser.y"
               {
-        yyval = std::make_shared<ast::Not>(yyvsp[0]);
+        yyval = std::make_shared<ast::Not>(std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]));
     }
-#line 1607 "parser.tab.c"
+#line 1601 "parser.tab.c"
     break;
 
   case 47: /* Exp: Exp AND Exp  */
-#line 212 "parser.y"
+#line 215 "parser.y"
                   {
-        yyval = std::make_shared<ast::LogicalAnd>(yyvsp[-2], yyvsp[0]);
+        yyval = std::make_shared<ast::And>(std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]), std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]));
     }
-#line 1615 "parser.tab.c"
+#line 1609 "parser.tab.c"
     break;
 
   case 48: /* Exp: Exp OR Exp  */
-#line 215 "parser.y"
+#line 218 "parser.y"
                  {
-        yyval = std::make_shared<ast::LogicalOr>(yyvsp[-2], yyvsp[0]);
+        yyval = std::make_shared<ast::Or>(std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]), std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]));
     }
-#line 1623 "parser.tab.c"
+#line 1617 "parser.tab.c"
     break;
 
   case 49: /* Exp: Exp EQUAL Exp  */
-#line 218 "parser.y"
+#line 223 "parser.y"
                     {
-        yyval = std::make_shared<ast::RelOp>(yyvsp[-2], yyvsp[-1], yyvsp[0]);
-    }
-#line 1631 "parser.tab.c"
+        yyval = std::make_shared<ast::RelOp>(
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]),
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]),
+            ast::RelOpType::EQ
+        );    }
+#line 1628 "parser.tab.c"
     break;
 
   case 50: /* Exp: Exp NEQUAL Exp  */
-#line 221 "parser.y"
+#line 229 "parser.y"
                      {
-        yyval = std::make_shared<ast::RelOp>(yyvsp[-2], yyvsp[-1], yyvsp[0]);
-    }
+        yyval = std::make_shared<ast::RelOp>(
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]),
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]),
+            ast::RelOpType::NE
+        );    }
 #line 1639 "parser.tab.c"
     break;
 
-  case 51: /* Exp: Exp GREATER Exp  */
-#line 224 "parser.y"
-                      {
-        yyval = std::make_shared<ast::RelOp>(yyvsp[-2], yyvsp[-1], yyvsp[0]);
-    }
-#line 1647 "parser.tab.c"
+  case 51: /* Exp: Exp LESS Exp  */
+#line 237 "parser.y"
+                   {
+        yyval = std::make_shared<ast::RelOp>(
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]),
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]),
+            ast::RelOpType::LT
+        );    }
+#line 1650 "parser.tab.c"
     break;
 
-  case 52: /* Exp: Exp LESS Exp  */
-#line 227 "parser.y"
-                   {
-        yyval = std::make_shared<ast::RelOp>(yyvsp[-2], yyvsp[-1], yyvsp[0]);
-    }
-#line 1655 "parser.tab.c"
+  case 52: /* Exp: Exp GREATER Exp  */
+#line 244 "parser.y"
+                      {
+        yyval = std::make_shared<ast::RelOp>(
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]),
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]),
+            ast::RelOpType::GT
+        );    }
+#line 1661 "parser.tab.c"
     break;
 
   case 53: /* Exp: Exp LEQ Exp  */
-#line 230 "parser.y"
+#line 251 "parser.y"
                   {
-        yyval = std::make_shared<ast::RelOp>(yyvsp[-2], yyvsp[-1], yyvsp[0]);
-    }
-#line 1663 "parser.tab.c"
+        yyval = std::make_shared<ast::RelOp>(
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]),
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]),
+            ast::RelOpType::LE
+        );    }
+#line 1672 "parser.tab.c"
     break;
 
   case 54: /* Exp: Exp GEQ Exp  */
-#line 233 "parser.y"
+#line 258 "parser.y"
                   {
-        yyval = std::make_shared<ast::RelOp>(yyvsp[-2], yyvsp[-1], yyvsp[0]);
-    }
-#line 1671 "parser.tab.c"
+        yyval = std::make_shared<ast::RelOp>(
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[-2]),
+            std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]),
+            ast::RelOpType::GE
+        );    }
+#line 1683 "parser.tab.c"
     break;
 
   case 55: /* Exp: LPAREN Type RPAREN Exp  */
-#line 236 "parser.y"
+#line 265 "parser.y"
                              {
-        yyval = std::make_shared<ast::TypeCast>(yyvsp[-2], yyvsp[0]);
+    yyval = std::make_shared<ast::Cast>(
+        std::dynamic_pointer_cast<ast::Exp>(yyvsp[0]),     
+        std::dynamic_pointer_cast<ast::Type>(yyvsp[-2])
+    );
     }
-#line 1679 "parser.tab.c"
+#line 1694 "parser.tab.c"
     break;
 
 
-#line 1683 "parser.tab.c"
+#line 1698 "parser.tab.c"
 
       default: break;
     }
@@ -1872,4 +1887,9 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 241 "parser.y"
+#line 273 "parser.y"
+
+
+void yyerror(const char*){
+    output::errorSyn(yylineno); //check later
+}
