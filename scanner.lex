@@ -1,6 +1,7 @@
 %{
-#include "tokens.hpp"
 #include "output.hpp"
+#include "nodes.hpp"
+#include "parser.tab.h"
 %}
 
 %option noyywrap
@@ -10,8 +11,8 @@ first_digit [1-9]
 whitespace [ \t\r]+  
 letter [a-zA-Z]
 string \"([^\n\r\"\\]|\\[rnt\"\\])+\"  
-comment \/\/[^\r\n]*[\r|\n|\r\n]?
-
+comment \/\/[^\r\n]*[\r]?
+commentline \/\/[^\r\n]*[\n|\r\n]
 %%
 
 void        return VOID;
@@ -50,13 +51,18 @@ continue    return CONTINUE;
 \<=              return LEQ;
 >=              return GEQ;
 
-[a-zA-Z][a-zA-Z0-9]*   return ID;
+[a-zA-Z][a-zA-Z0-9]*   {yylval = std::make_shared<ast::ID>(yytext);
+                        return ID;}
 
-[1-9][0-9]*b|0b        return NUM_B;  // Binary numbers
-[1-9][0-9]*|0          return NUM;    // Decimal numbers
+[1-9][0-9]*b|0b        {yylval = std::make_shared<ast::NumB>(yytext);
+                        return NUM_B;}  // Binary numbers
+[1-9][0-9]*|0          {yylval = std::make_shared<ast::Num>(yytext);
+                        return NUM;}    // Decimal numbers
 
-{string}    return STRING;
-{comment}   {  }
+{string}    {yylval = std::make_shared<ast::String>(yytext);
+            return STRING;} //not sure if i need to increase yylineno
+{comment}   { } //need to check
+{commentline}   { yylineno++; } //need to check
 {whitespace} {  }
 
 \n { yylineno++; }
@@ -64,77 +70,3 @@ continue    return CONTINUE;
 . { output::errorLex(yylineno); }
 
 %%
-
-
-%{
-#include "tokens.hpp"
-#include "output.hpp"
-%}
-
-%option noyywrap
-
-digit [0-9]
-first_digit [1-9]
-whitespace [ \t\r]  
-letter [a-zA-Z]
-relop "=="|"!="|"<"|">"|"<="|">="
-binop "-"|"*"|"+"|"/"
-
-%x comment id string hexa escape
-
-
-%%
-
-void    return VOID;
-int     return INT;
-byte     return BYTE;
-bool     return BOOL;
-and     return AND;
-or     return OR;
-not     return NOT;
-true     return TRUE;
-false     return FALSE;
-return     return RETURN;
-if     return IF;
-else     return ELSE;
-while     return WHILE;
-break     return BREAK;
-continue     return CONTINUE;
-;           return SC;
-,           return COMMA;
-\(           return LPAREN;
-\)           return RPAREN;
-\{          return LBRACE;
-\}          return RBRACE;
-=           return ASSIGN;
-{relop}     return RELOP;
-{binop}     return BINOP;
-"//"         {
-    BEGIN (comment);
-}
-<comment>[^\n\r]*     {
-    BEGIN (INITIAL);
-    return COMMENT;
-}
-
-[a-zA-Z]+[a-zA-Z0-9]*     return ID;
-
-
-[1-9][0-9]*b|0b       return NUM_B;
-[1-9][0-9]*|0         return NUM;
-
-
-\"([^\"]*\\\")*[^\"]*\"            return STRING; 
-\"              output::errorUnclosedString();
-
-
-
-
-{whitespace}+ ;
-
-
-\n  {yylineno++;}
-. {output::errorUnknownChar(*yytext);}
-
-%%
-
